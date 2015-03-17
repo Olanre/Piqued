@@ -1,0 +1,43 @@
+<?php
+
+/********************************
+	File is the login form for 
+	users 
+	@author Olanre Okunlola
+	@date July 12 2014
+*/
+
+?>
+<div id = "login_error"> </div>
+<!-- <div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="true" data-auto-logout-link="false"> Log In </div> -->
+ 
+<form id="login_form" method="post">
+	<div >
+		<input type="text"  onkeyup="checkFormValue( this)"  name="user" id="user" placeholder="Your Username" />
+	</div>
+	
+	<div >
+		<input type="password"  onkeyup="checkFormValue( this)" name="pass" id="pass" placeholder="Password" />
+	</div>
+	<a href="#contact"> <span style="color: #700000;font-weight:300"> Help! Can't access my account </span></a><br>
+	<input type="button" value="Sign In" onclick="loginUser('login_form')">
+</form>
+<!--
+<span id="signinButton">
+  <span
+    class="g-signin"
+    data-callback="signinCallback"
+    data-clientid="CLIENT_ID"
+    data-cookiepolicy="single_host_origin"
+    data-requestvisibleactions="http://schema.org/AddAction"
+    data-scope="https://www.googleapis.com/auth/profile.login">
+  </span>
+</span>
+-->
+<?php
+
+/***************************************
+	Please remember to include the section
+	to reset password if forgotten or 
+	they do not remember their username
+***************************************/

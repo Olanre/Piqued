@@ -1,0 +1,55 @@
+application: piquednow
+version: 1
+runtime: php
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /bootstrap
+  static_dir: public/bootstrap
+  http_headers:
+    Access-Control-Allow-Origin: http://piquednow.appspot.com
+  
+- url: /js 
+  static_dir: public/js
+  http_headers:
+    Access-Control-Allow-Origin: http://piquednow.appspot.com
+
+- url: /fancy
+  static_dir: public/fancy
+  http_headers:
+      Access-Control-Allow-Origin: http://piquednow.appspot.com
+      
+- url: /css 
+  static_dir: public/css
+  http_headers:
+    Access-Control-Allow-Origin: http://piquednow.appspot.com
+
+- url: /ajax/(.*?)
+  script: public/ajax/\1
+
+- url: /controls/(.*?)
+  script: public/controls/\1
+
+- url: /main
+  script: public/main.php
+
+- url: /images
+  static_dir: public/images
+  http_headers:
+    Access-Control-Allow-Origin: http://piquednow.appspot.com
+
+- url: /oauth2callback 
+  static_dir: public/oauth2callback
+ 
+- url: /fonts
+  static_dir: public/fonts
+  http_headers:
+    Access-Control-Allow-Origin: http://piquednow.appspot.com
+  
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+  
+- url: .*
+  script: public/index.php
